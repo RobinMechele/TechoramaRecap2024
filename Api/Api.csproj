@@ -6,33 +6,22 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <!--Everything for containerizing this project (examples)-->
-  <!--More info here: https://learn.microsoft.com/en-us/dotnet/core/docker/publish-as-container-->
+  <!--Example configuration for containerizing using dotnet publish-->
+  <!--All parameters can be used in CLI as well with the same name-->
+  <!--More info: https://learn.microsoft.com/en-us/dotnet/core/docker/publish-as-container-->
 
-  <PropertyGroup>
-    <!--Favorite Linux container family-->
-    <!--<ContainerFamily>alpine</ContainerFamily>
-    <ContainerRepository>my-api-alpine</ContainerRepository>-->
-    
-    <!--Ubuntu container family-->
-    <!--<ContainerFamily>jammy</ContainerFamily>
-    <ContainerRepository>my-api-jammy</ContainerRepository>-->
-    
+  <PropertyGroup>   
     <!--Ubuntu chiseled container family-->
-    <ContainerFamily>jammy-chiseled</ContainerFamily>
-    <ContainerRepository>my-api-jammy-chiseled</ContainerRepository>
+    <ContainerFamily>alpine</ContainerFamily>
+    <ContainerRepository>my-api-alpine</ContainerRepository>
+    
+    <!--Enable these both for smaller container size-->
+    <!--<RuntimeIdentifier>linux-x64</RuntimeIdentifier>-->
+    <!--<SelfContained>true</SelfContained>-->
   </PropertyGroup>
-  
-  
-  
 
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-    
-    
-    
-    
   </ItemGroup>
-
 </Project>
