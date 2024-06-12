@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!--Everything for containerizing this project (examples)-->
+  <!--More info here: https://learn.microsoft.com/en-us/dotnet/core/docker/publish-as-container-->
+
+  <PropertyGroup>
+    <!--Favorite Linux container family-->
+    <!--<ContainerFamily>alpine</ContainerFamily>
+    <ContainerRepository>my-api-alpine</ContainerRepository>-->
+    
+    <!--Ubuntu container family-->
+    <!--<ContainerFamily>jammy</ContainerFamily>
+    <ContainerRepository>my-api-jammy</ContainerRepository>-->
+    
+    <!--Ubuntu chiseled container family-->
+    <ContainerFamily>jammy-chiseled</ContainerFamily>
+    <ContainerRepository>my-api-jammy-chiseled</ContainerRepository>
+  </PropertyGroup>
+  
+  
+  
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    
+    
+    
+    
+  </ItemGroup>
+
+</Project>
