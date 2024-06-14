@@ -1,27 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
-  <!--Example configuration for containerizing using dotnet publish-->
-  <!--All parameters can be used in CLI as well with the same name-->
-  <!--More info: https://learn.microsoft.com/en-us/dotnet/core/docker/publish-as-container-->
+	<!--Example configuration for containerizing using dotnet publish-->
+	<!--All parameters can be used in CLI using the same name as you would define it in the project file-->
+	<!--More info: https://learn.microsoft.com/en-us/dotnet/core/docker/publish-as-container-->
 
-  <PropertyGroup>   
-    <!--Ubuntu chiseled container family-->
-    <ContainerFamily>alpine</ContainerFamily>
-    <ContainerRepository>my-api-alpine</ContainerRepository>
-    
-    <!--Enable these both for smaller container size-->
-    <!--<RuntimeIdentifier>linux-x64</RuntimeIdentifier>-->
-    <!--<SelfContained>true</SelfContained>-->
-  </PropertyGroup>
+	<PropertyGroup>
+		<!--Ubuntu container family-->
+		<ContainerFamily>jammy</ContainerFamily>
+		<ContainerRepository>my-api-jammy</ContainerRepository>
+		
+		<!--Alpine container family-->
+		<!--<ContainerFamily>alpine</ContainerFamily>
+		<ContainerRepository>my-api-alpine</ContainerRepository>-->
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-  </ItemGroup>
+		<!--Ubuntu container family-->
+		<!--<ContainerFamily>jammy-chiseled</ContainerFamily>
+		<ContainerRepository>my-api-jammy-chiseled</ContainerRepository>-->
+
+		<!--Enable these both for smaller container size (define your runtime and self containment of the app)-->
+		<!--<RuntimeIdentifier>linux-x64</RuntimeIdentifier>-->
+		<!--<SelfContained>true</SelfContained>-->
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Since .NET8, no need for extra library anymore -->
+		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+	</ItemGroup>
 </Project>
